@@ -1,0 +1,251 @@
+* {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        color: #333333;
+      }
+
+      /* --- HEADER --- */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #dddddd;
+        border-bottom: 2px solid #555555;
+      }
+
+      .logo {
+        width: 100px;
+        height: 50px;
+        border: 2px dashed #555555;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        background-color: #e5e5e5;
+      }
+
+      .judul {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      /* --- NAVBAR --- */
+      .navbar {
+        display: flex;
+        gap: 20px;
+        background-color: #cccccc;
+        padding: 15px 20px;
+        border-bottom: 2px solid #555555;
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: #333333;
+        font-weight: bold;
+      }
+      
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+
+      /* --- MAIN LAYOUT --- */
+      .layout {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        min-height: 70vh;
+      }
+
+      /* --- SIDEBAR --- */
+      .sidebar {
+        width: 250px;
+        border: 2px solid #555555;
+        padding: 15px;
+        background-color: #e5e5e5;
+      }
+
+      .sidebar h3 {
+        margin-top: 0;
+        border-bottom: 1px solid #777;
+        padding-bottom: 10px;
+      }
+
+      .sidebar ul {
+        list-style-type: square;
+        padding-left: 20px;
+        line-height: 1.8;
+      }
+
+      .sidebar li a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .sidebar li a:hover {
+        text-decoration: underline;
+      }
+
+      /* --- CONTENT AREA --- */
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* --- HERO SECTION --- */
+      .hero {
+        border: 2px solid #555555;
+        padding: 20px;
+        background-color: #e5e5e5;
+      }
+
+      .hero-banner {
+        height: 180px;
+        border: 2px dashed #777777;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #dddddd;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        color: #555;
+      }
+
+      /* --- PRODUCT CARDS --- */
+      .card-container {
+        display: flex;
+        gap: 20px;
+      }
+
+      .card {
+        flex: 1;
+        border: 2px solid #555555;
+        padding: 15px;
+        background-color: #e5e5e5;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gambar-card {
+        height: 150px;
+        border: 2px dashed #777777;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #dddddd;
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      .card h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.1rem;
+      }
+
+      .card .harga {
+        font-weight: bold;
+        color: #222;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+      
+      .card p {
+        font-size: 0.9rem;
+        flex-grow: 1; /* Pushes button to bottom */
+        margin-bottom: 15px;
+      }
+
+      /* --- BUTTONS --- */
+      button {
+        padding: 10px 15px;
+        border: 2px solid #555555;
+        background-color: #cccccc;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: inherit;
+        transition: background-color 0.2s;
+      }
+
+      button:hover {
+        background-color: #bbbbbb;
+      }
+      
+      .btn-keranjang {
+        width: 100%;
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        text-align: center;
+        padding: 20px;
+        border-top: 2px solid #555555;
+        background-color: #cccccc;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      /* --- TOAST NOTIFICATION (PENGGANTI ALERT) --- */
+      #toast {
+        visibility: hidden;
+        min-width: 250px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        transform: translateX(-50%);
+        font-size: 15px;
+        box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+      }
+
+      #toast.show {
+        visibility: visible;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+      }
+
+      @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+      }
+
+      /* --- RESPONSIVE DESIGN --- */
+      @media (max-width: 768px) {
+        .layout {
+          flex-direction: column;
+        }
+
+        .sidebar,
+        .content {
+          width: 100%;
+        }
+
+        .card-container {
+          flex-direction: column;
+        }
+
+        .navbar {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        .header {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
