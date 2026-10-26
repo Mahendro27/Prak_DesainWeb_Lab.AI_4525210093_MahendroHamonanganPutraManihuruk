@@ -1,0 +1,109 @@
+/* ==================================================
+DESIGN SYSTEM - komponen tambahan & gaya dokumentasi
+Memakai token dari css/style.css (tidak mengubahnya)
+================================================== */
+
+/* ---------- Komponen tambahan: state tombol ---------- */
+.btn-secondary:hover,
+.btn-secondary.is-hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.btn-primary.is-hover { background-color: var(--primary-dark); }
+.btn-white:hover,
+.btn-white.is-hover { background-color: var(--neutral-100); }
+.btn:disabled,
+.btn.is-disabled {
+  background-color: var(--neutral-100);
+  border: 1px solid var(--neutral-300);
+  color: var(--neutral-600);
+  cursor: not-allowed;
+}
+.btn { font-family: inherit; font-size: 16px; border: 0; cursor: pointer; }
+.btn-secondary { border: 1px solid var(--neutral-300); }
+
+/* ---------- Komponen tambahan: form controls ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: var(--space-2); }
+.field label { font-size: 14px; font-weight: bold; color: var(--neutral-900); }
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--neutral-900);
+}
+.textarea { min-height: 90px; resize: vertical; }
+.input:focus, .select:focus, .textarea:focus {
+  outline: 3px solid rgba(192, 40, 31, 0.2);
+  border-color: var(--primary);
+}
+.input.is-error { border-color: var(--danger); }
+.field-error { font-size: 13px; color: var(--danger); }
+.field-hint { font-size: 13px; color: var(--neutral-600); }
+
+.check { display: flex; align-items: center; gap: 10px; margin-bottom: var(--space-1); color: var(--neutral-900); }
+.check input { width: 18px; height: 18px; accent-color: var(--primary); }
+
+/* ---------- Komponen tambahan: badge ---------- */
+.badge {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.badge-success { background-color: #e2f1e3; color: var(--success); }
+.badge-warning { background-color: #fdf0d6; color: #9a5d00; }
+.badge-danger  { background-color: #fbe4e2; color: var(--danger); }
+
+/* ---------- Gaya halaman dokumentasi ---------- */
+.ds-hero { padding: var(--space-6) 0; background-color: var(--primary); color: var(--white); }
+.ds-hero h1 { font-size: 44px; margin-bottom: var(--space-1); }
+.ds-hero p { color: rgba(255, 255, 255, 0.85); margin: 0; max-width: 640px; }
+
+.ds-nav { background: var(--white); border-bottom: 1px solid var(--neutral-100); position: sticky; top: 0; z-index: 10; }
+.ds-nav .container { display: flex; gap: 22px; padding: 14px 0; overflow-x: auto; white-space: nowrap; }
+.ds-nav a { color: var(--neutral-900); text-decoration: none; font-size: 15px; font-weight: 500; }
+.ds-nav a:hover { color: var(--primary); }
+
+.ds-section { padding: var(--space-5) 0; border-bottom: 1px solid var(--neutral-100); }
+.ds-section h2 { font-size: 30px; }
+.ds-section .lead { max-width: 680px; margin-bottom: var(--space-4); }
+.ds-sub { font-size: 14px; letter-spacing: 1px; color: var(--primary); margin: var(--space-4) 0 var(--space-2); text-transform: uppercase; }
+
+.ds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: var(--space-2); }
+.swatch { border: 1px solid var(--neutral-100); border-radius: var(--radius-md); overflow: hidden; background: var(--white); box-shadow: var(--shadow-sm); }
+.swatch-color { height: 80px; }
+.swatch-info { padding: 12px 14px; font-size: 13px; color: var(--neutral-600); line-height: 1.5; }
+.swatch-info strong { display: block; font-size: 15px; color: var(--neutral-900); }
+.swatch-info code { font-size: 12px; }
+
+.ds-row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.ds-row + .ds-row { margin-top: var(--space-2); }
+.ds-state { font-size: 13px; color: var(--neutral-600); width: 90px; }
+
+.type-row { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-2); padding: var(--space-2) 0; border-bottom: 1px dashed var(--neutral-300); }
+.type-row > :first-child { margin: 0; }
+.type-meta { font-size: 13px; color: var(--neutral-600); text-align: right; white-space: nowrap; }
+
+.space-row { display: flex; align-items: center; gap: var(--space-2); margin-bottom: 10px; font-size: 14px; }
+.space-bar { height: 16px; background-color: var(--accent); border-radius: 3px; }
+.space-name { width: 110px; color: var(--neutral-600); }
+
+.demo-box { width: 160px; padding: var(--space-2); background: var(--white); border: 1px solid var(--neutral-100); font-size: 14px; }
+.demo-box small { display: block; color: var(--neutral-600); }
+
+.ds-form { max-width: 440px; }
+.ds-dark { background: var(--primary); padding: var(--space-3); border-radius: var(--radius-md); display: inline-block; }
+
+.ds-footer { padding: 30px 0; background: var(--primary-dark); color: rgba(255,255,255,.75); font-size: 14px; }
+
+@media (max-width: 600px) {
+  .ds-hero h1 { font-size: 32px; }
+  .type-row { flex-direction: column; gap: 4px; }
+  .type-meta { text-align: left; }
+}

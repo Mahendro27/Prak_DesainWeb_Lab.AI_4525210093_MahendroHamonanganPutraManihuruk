@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System - RM Padang Ranah</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/design-system.css" />
+  </head>
+  <body>
+
+    <header class="ds-hero">
+      <div class="container">
+        <span class="label label-light">DESIGN SYSTEM</span>
+        <h1>RM Padang Ranah</h1>
+        <p>Panduan warna, tipografi, spacing, tombol, form, dan card yang dipakai pada website, supaya tampilan tetap konsisten.</p>
+      </div>
+    </header>
+
+    <nav class="ds-nav">
+      <div class="container">
+        <a href="#colors">Colors</a>
+        <a href="#typography">Typography</a>
+        <a href="#spacing">Spacing</a>
+        <a href="#buttons">Buttons</a>
+        <a href="#forms">Form Controls</a>
+        <a href="#cards">Cards</a>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- COLORS -->
+      <section id="colors" class="ds-section">
+        <div class="container">
+          <h2>1. Colors</h2>
+          <p class="lead">Merah cabai sebagai warna utama, emas kunyit sebagai aksen, dan netral abu kebiruan untuk teks dan latar.</p>
+
+          <h3 class="ds-sub">Primary &amp; Accent</h3>
+          <div class="ds-grid">
+            <div class="swatch"><div class="swatch-color" style="background:var(--primary)"></div><div class="swatch-info"><strong>Primary</strong>#C0281F<br><code>--primary</code></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:var(--primary-dark)"></div><div class="swatch-info"><strong>Primary dark</strong>#8E1B14<br><code>--primary-dark</code></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:var(--accent)"></div><div class="swatch-info"><strong>Accent</strong>#E7A72D<br><code>--accent</code></div></div>
+          </div>
+
+          <h3 class="ds-sub">Neutral</h3>
+          <div class="ds-grid">
+            <div class="swatch"><div class="swatch-color" style="background:var(--white);border-bottom:1px solid var(--neutral-100)"></div><div class="swatch-info"><strong>White</strong>#FFFFFF<br><code>--white</code></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:var(--neutral-50)"></div><div class="swatch-info"><strong>Neutral 50</strong>#F8F9FB<br><code>--neutral-50</code></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:var(--neutral-100)"></div><div class="swatch-info"><strong>Neutral 100</strong>#EEF1F5<br><code>--neutral-100</code></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:var(--neutral-300)"></div><div class="swatch-info"><strong>Neutral 300</strong>#CCD3DC<br><code>--neutral-300</code></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:var(--neutral-600)"></div><div class="swatch-info"><strong>Neutral 600</strong>#606B7A<br><code>--neutral-600</code></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:var(--neutral-900)"></div><div class="swatch-info"><strong>Neutral 900</strong>#202833<br><code>--neutral-900</code></div></div>
+          </div>
+
+          <h3 class="ds-sub">Status</h3>
+          <div class="ds-grid">
+            <div class="swatch"><div class="swatch-color" style="background:var(--success)"></div><div class="swatch-info"><strong>Success</strong>#2E7D32<br><code>--success</code></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:var(--warning)"></div><div class="swatch-info"><strong>Warning</strong>#ED9C19<br><code>--warning</code></div></div>
+            <div class="swatch"><div class="swatch-color" style="background:var(--danger)"></div><div class="swatch-info"><strong>Danger</strong>#C62828<br><code>--danger</code></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TYPOGRAPHY -->
+      <section id="typography" class="ds-section section-light">
+        <div class="container">
+          <h2>2. Typography</h2>
+          <p class="lead">Satu keluarga font (Arial) dengan skala ukuran yang konsisten. Body memakai line-height 1.7 agar nyaman dibaca.</p>
+
+          <div class="type-row"><h1 style="margin:0">Heading 1</h1><span class="type-meta">52px / Bold / 1.15<br>mobile 34-42px</span></div>
+          <div class="type-row"><h2 style="margin:0">Heading 2</h2><span class="type-meta">36px / Bold / 1.25<br>mobile 28px</span></div>
+          <div class="type-row"><h3 style="margin:0">Heading 3</h3><span class="type-meta">21px / Bold</span></div>
+          <div class="type-row"><p style="margin:0;font-size:18px">Paragraf pengantar (lead)</p><span class="type-meta">18px / Regular</span></div>
+          <div class="type-row"><p style="margin:0">Paragraf isi untuk deskripsi menu dan penjelasan.</p><span class="type-meta">16px / Regular / 1.7</span></div>
+          <div class="type-row"><strong>Label tombol</strong><span class="type-meta">16px / Bold</span></div>
+          <div class="type-row"><span class="label" style="margin:0">LABEL SECTION</span><span class="type-meta">13px / Bold / spasi 1.5px</span></div>
+        </div>
+      </section>
+
+      <!-- SPACING -->
+      <section id="spacing" class="ds-section">
+        <div class="container">
+          <h2>3. Spacing, Radius, dan Shadow</h2>
+          <p class="lead">Jarak mengikuti kelipatan 8px, supaya susunan konten rapi dan mudah diulang.</p>
+
+          <div class="space-row"><span class="space-name">--space-1</span><div class="space-bar" style="width:8px"></div>8px</div>
+          <div class="space-row"><span class="space-name">--space-2</span><div class="space-bar" style="width:16px"></div>16px</div>
+          <div class="space-row"><span class="space-name">--space-3</span><div class="space-bar" style="width:24px"></div>24px</div>
+          <div class="space-row"><span class="space-name">--space-4</span><div class="space-bar" style="width:32px"></div>32px</div>
+          <div class="space-row"><span class="space-name">--space-5</span><div class="space-bar" style="width:48px"></div>48px</div>
+          <div class="space-row"><span class="space-name">--space-6</span><div class="space-bar" style="width:64px"></div>64px</div>
+
+          <h3 class="ds-sub">Radius</h3>
+          <div class="ds-row">
+            <div class="demo-box" style="border-radius:var(--radius-sm)">Small 6px<small>tombol, ikon</small></div>
+            <div class="demo-box" style="border-radius:var(--radius-md)">Medium 12px<small>card</small></div>
+            <div class="demo-box" style="border-radius:var(--radius-lg)">Large 20px<small>gambar hero</small></div>
+          </div>
+
+          <h3 class="ds-sub">Shadow</h3>
+          <div class="ds-row">
+            <div class="demo-box" style="border-radius:var(--radius-md);box-shadow:var(--shadow-sm)">Shadow small<small>card fitur</small></div>
+            <div class="demo-box" style="border-radius:var(--radius-md);box-shadow:var(--shadow-md)">Shadow medium<small>gambar hero</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BUTTONS -->
+      <section id="buttons" class="ds-section section-light">
+        <div class="container">
+          <h2>4. Buttons</h2>
+          <p class="lead">Tiga varian tombol: primary untuk aksi utama, secondary untuk aksi pendukung, dan white untuk latar berwarna.</p>
+
+          <div class="ds-row"><span class="ds-state">Default</span>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+          </div>
+          <div class="ds-row"><span class="ds-state">Hover</span>
+            <button class="btn btn-primary is-hover">Primary</button>
+            <button class="btn btn-secondary is-hover">Secondary</button>
+          </div>
+          <div class="ds-row"><span class="ds-state">Disabled</span>
+            <button class="btn btn-primary" disabled>Primary</button>
+            <button class="btn btn-secondary" disabled>Secondary</button>
+          </div>
+
+          <h3 class="ds-sub">Pada latar berwarna</h3>
+          <div class="ds-dark">
+            <button class="btn btn-white">Pesan Sekarang</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORM CONTROLS -->
+      <section id="forms" class="ds-section">
+        <div class="container">
+          <h2>5. Form Controls</h2>
+          <p class="lead">Contoh form pemesanan: input, select, textarea, checkbox, dan radio, lengkap dengan keadaan error.</p>
+
+          <div class="ds-form">
+            <div class="field"><label for="nama">Nama</label><input class="input" id="nama" type="text" placeholder="Nama lengkap" /></div>
+            <div class="field">
+              <label for="porsi">Pilihan menu</label>
+              <select class="select" id="porsi">
+                <option>Rendang Daging Sapi</option>
+                <option>Ayam Pop</option>
+                <option>Dendeng Balado</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="hp">Nomor HP (error)</label>
+              <input class="input is-error" id="hp" type="tel" value="0812" />
+              <span class="field-error">Nomor HP minimal 10 digit.</span>
+            </div>
+            <div class="field">
+              <label for="catatan">Catatan</label>
+              <textarea class="textarea" id="catatan" placeholder="Contoh: sambal dipisah"></textarea>
+              <span class="field-hint">Opsional, maksimal 150 karakter.</span>
+            </div>
+            <label class="check"><input type="checkbox" checked /> Tambah nasi</label>
+            <label class="check"><input type="radio" name="antar" checked /> Makan di tempat</label>
+            <label class="check"><input type="radio" name="antar" /> Dibungkus</label>
+            <div style="margin-top:16px"><button class="btn btn-primary" type="button">Kirim Pesanan</button></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARDS -->
+      <section id="cards" class="ds-section section-light">
+        <div class="container">
+          <h2>6. Cards dan Badges</h2>
+          <p class="lead">Dua jenis card: feature card untuk keunggulan, dan facility card (dengan gambar) untuk menu.</p>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="icon">01</div>
+              <h3>Feature Card</h3>
+              <p>Ikon, judul, dan deskripsi singkat dengan shadow kecil.</p>
+            </article>
+            <article class="facility-card">
+              <img src="images/rendang.jpg" alt="Rendang daging sapi" />
+              <div class="facility-content">
+                <h3>Menu Card</h3>
+                <p>Gambar di atas, lalu judul dan deskripsi menu.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="ds-footer">
+      <div class="container">&copy; 2026 Design System RM Padang Ranah Minang</div>
+    </footer>
+
+  </body>
+</html>
