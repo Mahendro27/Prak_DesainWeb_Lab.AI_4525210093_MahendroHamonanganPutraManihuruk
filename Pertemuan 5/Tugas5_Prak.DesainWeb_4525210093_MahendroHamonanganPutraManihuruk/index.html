@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Online Sejahtera</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">LOGO</div>
+      <div class="judul">TOKO ONLINE SEJAHTERA</div>
+    </header>
+
+    <nav class="navbar">
+      <a href="#">Beranda</a>
+      <a href="#">Kategori</a>
+      <a href="#">Produk</a>
+      <a href="#" id="cart-link">Keranjang (0)</a>
+      <a href="#">Kontak</a>
+    </nav>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <h3>Kategori Produk</h3>
+        <ul>
+          <li><a href="#">Pakaian Pria</a></li>
+          <li><a href="#">Pakaian Wanita</a></li>
+          <li><a href="#">Sepatu</a></li>
+          <li><a href="#">Aksesoris</a></li>
+        </ul>
+      </aside>
+
+      <section class="content">
+
+        <div class="hero">
+          <div class="hero-banner">IMAGE/BANNER</div>
+          <h1>Selamat Datang di Toko Online Kami</h1>
+          <p>
+            Temukan berbagai koleksi fashion terbaru dan aksesoris menarik dengan harga terbaik. 
+            Nikmati kemudahan berbelanja dengan berbagai promo menarik setiap harinya. 
+            Kualitas terjamin dan pengiriman cepat ke seluruh Indonesia.
+          </p>
+          <button>Mulai Belanja</button>
+        </div>
+
+
+        <div class="card-container">
+          <div class="card">
+            <div class="gambar-card">IMAGE</div>
+            <h3>Kemeja Flanel Pria</h3>
+            <div class="harga">Rp 150.000</div>
+            <p>Kemeja flanel kasual dengan bahan katun premium. Nyaman dipakai seharian, cocok untuk gaya santai maupun semi-formal.</p>
+            <button class="btn-keranjang" onclick="tambahKeKeranjang()">Tambah ke Keranjang</button>
+          </div>
+          
+          <div class="card">
+            <div class="gambar-card">IMAGE</div>
+            <h3>Sepatu Sneakers Canvas</h3>
+            <div class="harga">Rp 250.000</div>
+            <p>Sepatu sneakers ringan dan trendi. Dilengkapi sol anti-slip dan insole empuk untuk menemani aktivitas harian Anda.</p>
+            <button class="btn-keranjang" onclick="tambahKeKeranjang()">Tambah ke Keranjang</button>
+          </div>
+          
+          <div class="card">
+            <div class="gambar-card">IMAGE</div>
+            <h3>Jam Tangan Analog</h3>
+            <div class="harga">Rp 120.000</div>
+            <p>Jam tangan bergaya minimalis elegan. Tahan air hingga kedalaman 30 meter, dilengkapi strap kulit sintetis berkualitas.</p>
+            <button class="btn-keranjang" onclick="tambahKeKeranjang()">Tambah ke Keranjang</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2026 Toko Online Sejahtera. Dibuat dengan HTML &amp; CSS.<br />
+      Informasi Kontak | Copyright | Media Sosial
+    </footer>
+
+  </body>
+</html>
