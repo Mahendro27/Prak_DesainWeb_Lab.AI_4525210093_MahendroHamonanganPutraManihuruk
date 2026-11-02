@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Registrasi Event Web Seminar 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Form Registrasi Event Tech Seminar</h2>
+  
+  <form id="eventForm" action="proses_registrasi.php" method="post" enctype="multipart/form-data" novalidate>
+    
+    <!-- 1. Text Input: Nama Lengkap -->
+    <div class="form-group">
+      <label for="nama">Nama Lengkap *</label>
+      <input type="text" id="nama" name="nama" required minlength="3">
+      <span class="error-message" id="err-nama">Nama minimal harus 3 karakter.</span>
+    </div>
+
+    <!-- 2. Email Input -->
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required>
+      <span class="error-message" id="err-email">Format email tidak valid (contoh: user@domain.com).</span>
+    </div>
+
+    <!-- 3. Telp Input -->
+    <div class="form-group">
+      <label for="telepon">Nomor Telepon/WhatsApp *</label>
+      <input type="tel" id="telepon" name="telepon" required pattern="^[0-9]{10,13}$">
+      <span class="error-message" id="err-telepon">Nomor telepon harus angka 10–13 digit.</span>
+    </div>
+
+    <!-- 4. Radio Button: Kategori Peserta -->
+    <div class="form-group">
+      <label>Kategori Peserta *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="kategori" value="Mahasiswa" required> Mahasiswa</label>
+        <label><input type="radio" name="kategori" value="Umum"> Umum</label>
+      </div>
+      <span class="error-message" id="err-kategori">Pilih salah satu kategori peserta.</span>
+    </div>
+
+    <!-- 5. Select Option: Pilihan Sesi Workshop -->
+    <div class="form-group">
+      <label for="workshop">Pilihan Sesi Workshop *</label>
+      <select id="workshop" name="workshop" required>
+        <option value="">-- Pilih Sesi Workshop --</option>
+        <option value="web_dev">Web Development with Modern Tools</option>
+        <option value="cyber_sec">Cyber Security Fundamentals</option>
+        <option value="ai_ml">Artificial Intelligence & Data Science</option>
+      </select>
+      <span class="error-message" id="err-workshop">Silakan pilih sesi workshop yang ingin diikuti.</span>
+    </div>
+
+    <!-- 6. Checkbox: Topik Minat (Minimal 1) -->
+    <div class="form-group">
+      <label>Topik Minat (Pilih minimal 1) *</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="topik[]" value="Frontend"> Frontend</label>
+        <label><input type="checkbox" name="topik[]" value="Backend"> Backend</label>
+        <label><input type="checkbox" name="topik[]" value="DevOps"> DevOps</label>
+      </div>
+      <span class="error-message" id="err-topik">Pilih minimal satu topik minat.</span>
+    </div>
+
+    <!-- 7. Textarea: Alasan Mengikuti Event -->
+    <div class="form-group">
+      <label for="alasan">Alasan Mengikuti Event *</label>
+      <textarea id="alasan" name="alasan" rows="4" required minlength="20"></textarea>
+      <span class="error-message" id="err-alasan">Alasan mengikuti minimal 20 karakter.</span>
+    </div>
+
+    <!-- 8. Upload File: Kartu Identitas / KTM -->
+    <div class="form-group">
+      <label for="identitas">Upload Kartu Identitas / KTM (PDF/JPG/PNG, Max 2MB) *</label>
+      <input type="file" id="identitas" name="identitas" accept=".pdf,.jpg,.jpeg,.png" required>
+      <span class="error-message" id="err-identitas">File wajib diunggah (Format: PDF/JPG/PNG, max 2MB).</span>
+    </div>
+
+    <!-- Tombol Submit & Reset -->
+    <div class="btn-group">
+      <button type="submit">Daftar Event</button>
+      <button type="reset">Reset Form</button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  document.getElementById('eventForm').addEventListener('submit', function(e) {
+    let isValid = true;
+
+    document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+
+    const nama = document.getElementById('nama').value.trim();
+    if (nama.length < 3) {
+      document.getElementById('err-nama').style.display = 'block';
+      isValid = false;
+    }
+
+    const email = document.getElementById('email').value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      document.getElementById('err-email').style.display = 'block';
+      isValid = false;
+    }
+
+    const telp = document.getElementById('telepon').value.trim();
+    const telpPattern = /^[0-9]{10,13}$/;
+    if (!telpPattern.test(telp)) {
+      document.getElementById('err-telepon').style.display = 'block';
+      isValid = false;
+    }
+
+    const kategori = document.querySelector('input[name="kategori"]:checked');
+    if (!kategori) {
+      document.getElementById('err-kategori').style.display = 'block';
+      isValid = false;
+    }
+
+    const workshop = document.getElementById('workshop').value;
+    if (workshop === '') {
+      document.getElementById('err-workshop').style.display = 'block';
+      isValid = false;
+    }
+
+    const topikChecked = document.querySelectorAll('input[name="topik[]"]:checked');
+    if (topikChecked.length === 0) {
+      document.getElementById('err-topik').style.display = 'block';
+      isValid = false;
+    }
+
+    const alasan = document.getElementById('alasan').value.trim();
+    if (alasan.length < 20) {
+      document.getElementById('err-alasan').style.display = 'block';
+      isValid = false;
+    }
+
+    const fileInput = document.getElementById('identitas');
+    if (fileInput.files.length === 0) {
+      document.getElementById('err-identitas').style.display = 'block';
+      isValid = false;
+    } else {
+      const file = fileInput.files[0];
+      const maxFileSize = 2 * 1024 * 1024;
+      const allowedExtensions = ['pdf', 'jpg', 'jpeg', 'png'];
+      const fileExt = file.name.split('.').pop().toLowerCase();
+
+      if (file.size > maxFileSize || !allowedExtensions.includes(fileExt)) {
+        document.getElementById('err-identitas').textContent = 'Ukuran file melebihi 2MB atau ekstensi tidak diizinkan!';
+        document.getElementById('err-identitas').style.display = 'block';
+        isValid = false;
+      }
+    }
+
+    if (!isValid) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+</body>
+</html>
