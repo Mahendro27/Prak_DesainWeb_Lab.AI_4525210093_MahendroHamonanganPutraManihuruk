@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pendaftaran Kursus</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="form-card">
+        <header class="form-header">
+          <span class="label-top"> PENDAFTARAN KURSUS </span>
+          <h1>Form Pendaftaran Kursus IT</h1>
+          <p>Lengkapi data pendaftaran dan unggah bukti pembayaran di bawah ini.</p>
+        </header>
+        <form action="/proses-pendaftaran" method="post" enctype="multipart/form-data">
+          
+          <div class="form-group">
+            <label for="nama"> Nama Lengkap * </label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Contoh: Saipul"
+              minlength="3"
+              maxlength="50"
+              required
+            />
+            <small> Masukkan nama lengkap antara 3-50 karakter. </small>
+          </div>
+
+          <div class="form-group">
+            <label for="nohp"> Nomor Telepon * </label>
+            <input
+              type="tel"
+              id="nohp"
+              name="nohp"
+              placeholder="Contoh: 081234567890"
+              pattern="[0-9]{10,13}"
+              required
+            />
+            <small> Format wajib angka, 10 hingga 13 digit. </small>
+          </div>
+
+          <div class="form-group">
+            <label for="kursus"> Pilihan Program Kursus * </label>
+            <select id="kursus" name="kursus" required>
+              <option value="">-- Pilih Program --</option>
+              <option value="web">Fullstack Web Development</option>
+              <option value="uiux">UI/UX Design</option>
+              <option value="datascience">Data Science Bootcamp</option>
+            </select>
+          </div>
+
+          <fieldset>
+            <legend>Jadwal Kelas *</legend>
+            <p class="instruction">Pilih salah satu jadwal yang tersedia.</p>
+            <div class="option">
+              <input type="radio" id="pagi" name="jadwal" value="pagi" required />
+              <label for="pagi"> Kelas Pagi (08:00 - 12:00) </label>
+            </div>
+            <div class="option">
+              <input type="radio" id="malam" name="jadwal" value="malam" required />
+              <label for="malam"> Kelas Malam (19:00 - 22:00) </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Fasilitas Tambahan</legend>
+            <p class="instruction">Anda boleh memilih lebih dari satu (Opsional).</p>
+            <div class="option">
+              <input type="checkbox" id="modul" name="fasilitas[]" value="modul" />
+              <label for="modul"> Modul Cetak Fisik </label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="sertifikat" name="fasilitas[]" value="sertifikat" />
+              <label for="sertifikat"> Cetak Sertifikat Hardcopy </label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="motivasi"> Motivasi Bergabung * </label>
+            <textarea
+              id="motivasi"
+              name="motivasi"
+              rows="4"
+              placeholder="Ceritakan mengapa Anda ingin mengikuti kursus ini..."
+              minlength="20"
+              required
+            ></textarea>
+            <small> Minimal 20 karakter. </small>
+          </div>
+
+          <div class="form-group upload-group">
+            <label for="bukti"> Unggah Bukti Pembayaran * </label>
+            <input
+              type="file"
+              id="bukti"
+              name="bukti"
+              accept=".jpg,.jpeg,.png,.pdf"
+              required
+            />
+            <small> Format yang didukung: JPG, PNG, PDF (Maks. 2MB). </small>
+          </div>
+
+          <div class="agreement">
+            <input type="checkbox" id="setuju" name="setuju" required />
+            <label for="setuju"> Saya menyatakan bahwa data yang diisi adalah benar dan menyetujui syarat serta ketentuan kursus. * </label>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">
+              Kirim Pendaftaran
+            </button>
+            <button type="reset" class="btn btn-secondary">
+              Reset Data
+            </button>
+            <button type="button" class="btn btn-outline" onclick="alert('Hubungi CS: 0811-2222-3333 jika butuh bantuan.')">
+              Bantuan CS
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
