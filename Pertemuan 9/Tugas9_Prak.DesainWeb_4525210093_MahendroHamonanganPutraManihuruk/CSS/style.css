@@ -1,0 +1,13 @@
+/* Custom styling tambahan di atas Bootstrap */
+.card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.table th,
+.table td {
+    white-space: nowrap;
+}
